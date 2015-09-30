@@ -1,6 +1,6 @@
  {
-     "backend": "",
+     "backend": "https://sleepy-crag-4011.herokuapp.com/",
      "backend_port": 80,
-     "frontend": "",
+     "frontend": "http://vocabflashcards.torcellite.com",
      "frontend_port": 80
  }
