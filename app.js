@@ -11,11 +11,12 @@ var express = require('express'),
 var env = process.env.NODE_ENV || 'Development';
 console.log(chalk.cyan('Environment:') + ' ' + env);
 
+// Use CORS
+app.use(cors);
 // Use compression
 app.use(compression());
 
 // Set up router
-app.use(cors);
 app.use('/', require('./controllers/routes'));
 
 var port = process.env.PORT || config.backend_port;
