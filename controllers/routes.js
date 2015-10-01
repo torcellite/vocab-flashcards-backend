@@ -6,16 +6,12 @@
 
 var express = require('express'),
     router = express.Router(),
-    cors = require('cors'),
+    cors = require('./cors'),
     utils = require('./utils'),
     config = require('../config/config');
-    // corsOptions = {
-    //     origin: config.frontend_origin,
-    //     methods: ['GET'],
-    //     allowedHeaders: 'Content-Type' //,
-    //         //preflightContinue: true
-    // };
 
-router.get('/define/:word', utils.getDefinition);
+router.options('/define/:word', cors);
+router.get('/define/:word', cors, utils.getDefinition);
+router.get('/define/:word', cors, utils.getDefinition);
 
 module.exports = router;
