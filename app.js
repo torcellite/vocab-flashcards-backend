@@ -32,7 +32,7 @@ app.use(enableCORS);
 app.use('/', require('./controllers/routes'));
 
 var port = process.env.PORT || config.backend_port;
-app.listen(config.backend_port, function() {
+app.listen(port, function() {
     console.log(chalk.green('Listening:') + ' ' + port);
 });
 
