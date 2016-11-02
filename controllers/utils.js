@@ -38,7 +38,6 @@ var getDefinition = function(req, res, next) {
                 	} else if (divFound && children == 0 && name =='div') {
                 		divFound = false;
                 		mainDivContent += '</div>';
-                		res.send(mainDivContent);
                 		console.log(chalk.green('200: ') + 'Definition sent');
                 	}
                 }
@@ -47,6 +46,7 @@ var getDefinition = function(req, res, next) {
             });
             parser.write(body);
             parser.end();
+            res.send(mainDivContent);
         } else {
             console.log(chalk.red(response.statusCode + ': ') + error);
         }

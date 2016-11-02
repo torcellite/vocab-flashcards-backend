@@ -13,7 +13,7 @@ module.exports = function(req, res, next) {
         // intercept OPTIONS method
         if ('OPTIONS' === req.method) {
             isPreFlight = true;
-            res.sendStatus(200);
+            return res.sendStatus(200);
         }
     }
     if (!isPreFlight)
